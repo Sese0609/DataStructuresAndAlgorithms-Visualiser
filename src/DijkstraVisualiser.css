@@ -1,0 +1,84 @@
+.visualizer-container { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  font-family: sans-serif; 
+  padding: 2rem; 
+}
+
+.instructions {
+  margin-top: 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 1.5rem 0;
+}
+
+.grid-row {
+  display: flex;
+  gap: 8px;
+}
+
+/* Base box styling slightly tweaked to be clickable */
+.box { 
+  width: 60px; 
+  height: 60px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  border-radius: 8px; 
+  cursor: pointer;
+  transition: all 0.2s ease; 
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+}
+
+.box:hover {
+  transform: scale(1.05);
+}
+
+/* Shared State Colors */
+.default { background-color: #e5e7eb; border: 2px solid #d1d5db; box-shadow: none; } /* Gray - empty */
+.start { background-color: #3b82f6; cursor: default; } /* Blue */
+.end { background-color: #ef4444; cursor: default; } /* Red */
+.wall { background-color: #1f2937; transform: scale(0.95); } /* Dark Slate */
+.visited { background-color: #a855f7; cursor: default; } /* Purple - explored space */
+.path { background-color: #10b981; transform: scale(1.1); z-index: 10; cursor: default; } /* Green - final route */
+
+/* Specific transforms just for the main animated boxes */
+.box.visited { animation: popVisited 0.3s ease forwards; }
+
+@keyframes popVisited {
+  0% { transform: scale(0.8); background-color: #d8b4fe; }
+  100% { transform: scale(1); background-color: #a855f7; }
+}
+
+/* Controls & Legend */
+.controls { display: flex; gap: 1rem; }
+button { 
+  padding: 10px 20px; 
+  font-size: 16px; 
+  border: none; 
+  border-radius: 5px; 
+  background-color: #1f2937; 
+  color: white; 
+  cursor: pointer; 
+  transition: 0.2s; 
+}
+button:hover:not(:disabled) { background-color: #374151; }
+button:disabled { background-color: #9ca3af; cursor: not-allowed; }
+
+.legend { 
+  display: flex; 
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px; 
+  margin-bottom: 2rem; 
+  font-size: 14px; 
+}
+.legend-item { display: flex; align-items: center; gap: 5px; }
+.box-mini { width: 15px; height: 15px; border-radius: 3px; }

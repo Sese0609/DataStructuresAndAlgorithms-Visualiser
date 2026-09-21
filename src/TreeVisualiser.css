@@ -1,0 +1,152 @@
+.visualizer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+.controls {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.controls input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 150px;
+}
+
+.controls button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f59e0b; /* Orange color for the Tree */
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.controls button:hover {
+  background-color: #d97706;
+}
+
+.controls button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.empty-text {
+  color: #888;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.tree-container {
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  overflow-x: auto; /* Allows scrolling if the tree gets too wide */
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+/* --- Pure CSS Tree Styling --- */
+.css-tree ul {
+  padding-top: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+}
+
+.css-tree li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+  position: relative;
+  padding: 20px 10px 0 10px;
+}
+
+/* The node itself */
+.tree-node {
+  width: 45px;
+  height: 45px;
+  background-color: #fbbf24;
+  color: #78350f;
+  border: 2px solid #b45309;
+  border-radius: 50%; /* Makes it a circle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  z-index: 2;
+}
+
+/* Invisible placeholder to keep tree balanced when a node has only one child */
+.empty-node {
+  visibility: hidden;
+}
+
+/* --- CSS Magic for Connecting Lines --- */
+
+/* Draw lines down from parents */
+.css-tree ul::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-left: 2px solid #ccc;
+  width: 0;
+  height: 20px;
+}
+
+/* Draw horizontal lines between siblings */
+.css-tree li::before, .css-tree li::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 50%;
+  border-top: 2px solid #ccc;
+  width: 50%;
+  height: 20px;
+}
+.css-tree li::after {
+  right: auto;
+  left: 50%;
+  border-left: 2px solid #ccc;
+}
+
+/* Remove horizontal lines for elements with no siblings */
+.css-tree li:only-child::after, .css-tree li:only-child::before {
+  display: none;
+}
+
+/* Remove vertical line for elements with no siblings */
+.css-tree li:only-child {
+  padding-top: 0;
+}
+
+/* Trim left/right lines for first and last siblings */
+.css-tree li:first-child::before, .css-tree li:last-child::after {
+  border: 0 none;
+}
+
+/* Curve the lines down towards the children */
+.css-tree li:first-child::after {
+  border-radius: 5px 0 0 0;
+}
+.css-tree li:last-child::before {
+  border-right: 2px solid #ccc;
+  border-radius: 0 5px 0 0;
+}
+
+/* Remove the line on top of the very first root node */
+.css-tree > ul > li::before, .css-tree > ul > li::after, .css-tree > ul::before {
+  display: none;
+}

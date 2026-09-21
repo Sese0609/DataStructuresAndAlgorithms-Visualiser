@@ -1,0 +1,62 @@
+.bubble-sort-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: sans-serif;
+  margin-top: 50px;
+}
+
+.boxes-container {
+  display: flex;
+  gap: 15px; /* Space between the 5 boxes */
+  margin: 30px 0;
+  height: 80px; 
+  align-items: center;
+}
+
+.box {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3b82f6; /* Default Blue */
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Class applied dynamically in JSX when two boxes are being compared */
+.box.active {
+  background-color: #ef4444; /* Changes to Red */
+  transform: translateY(-10px); /* Bumps the active boxes up slightly */
+}
+
+.controls {
+  display: flex;
+  gap: 15px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  background-color: #10b981;
+  color: white;
+  transition: background-color 0.2s;
+}
+
+button:hover:not(:disabled) {
+  background-color: #059669;
+}
+
+button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}

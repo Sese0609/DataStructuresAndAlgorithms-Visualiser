@@ -1,0 +1,74 @@
+.bfs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #0f172a;
+  padding: 2rem;
+  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+  max-width: 800px;
+}
+
+.bfs-controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.bfs-controls button {
+  background-color: #3b82f6; /* Blue theme for BFS */
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.bfs-controls button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.bfs-canvas {
+  width: 600px;
+  height: 350px;
+  background-image: radial-gradient(#334155 1px, transparent 1px);
+  background-size: 20px 20px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+}
+
+.bfs-edge {
+  stroke: #475569;
+  stroke-width: 3px;
+}
+
+.bfs-node {
+  fill: #1e293b;
+  stroke: #64748b;
+  stroke-width: 3px;
+  transition: all 0.4s ease-in-out;
+}
+
+.bfs-node.queued {
+  fill: #3b82f6; /* Queue is Blue */
+  stroke: #60a5fa;
+}
+
+.bfs-node.current {
+  fill: #f59e0b;
+  stroke: #fcd34d;
+  transform: scale(1.1);
+}
+
+.bfs-node.visited {
+  fill: #10b981;
+  stroke: #34d399;
+}
+
+.bfs-label {
+  fill: white;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'JetBrains Mono', monospace;
+  pointer-events: none;
+}

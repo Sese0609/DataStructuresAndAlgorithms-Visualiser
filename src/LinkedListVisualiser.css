@@ -1,0 +1,91 @@
+.ll-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ll-input {
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+  display: block;
+  margin: 0 auto 40px auto;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.ll-list {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  padding: 10px;
+  max-width: 100%;
+}
+
+
+.ll-node {
+  display: flex;
+  height: 60px;
+  border: 3px solid #2563eb;
+  border-radius: 8px;
+  background-color: #eff6ff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.ll-data {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  padding: 0 15px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1e3a8a;
+}
+
+/* The dot inside the pointer box */
+.ll-dot {
+  height: 12px;
+  width: 12px;
+  background-color: #2563eb;
+  border-radius: 50%;
+}
+
+/* The arrow connecting the nodes */
+.ll-arrow {
+  margin: 0 15px;
+  font-size: 2rem;
+  color: #2563eb;
+}
+
+/* The final null pointer */
+.ll-null {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #64748b;
+  font-family: monospace;
+}
+
+/* The right side of the node (The Pointer) */
+.ll-pointer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px; /* Made slightly wider to fit the number */
+  border-left: 3px solid #2563eb;
+  background-color: #dbeafe;
+  font-family: monospace;
+  font-size: 0.85rem;
+  color: #1e3a8a;
+  font-weight: bold;
+}
+
+/* Shows the node's own memory address above it */
+.ll-address {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-family: monospace;
+  margin-bottom: 5px;
+}

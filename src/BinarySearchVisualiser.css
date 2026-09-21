@@ -1,0 +1,71 @@
+.visualizer-container { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  font-family: sans-serif; 
+  padding: 2rem; 
+}
+
+.target-display {
+  font-size: 20px;
+  margin-top: 1rem;
+  padding: 10px 20px;
+  background-color: #f3f4f6;
+  border-radius: 8px;
+  color: #1f2937;
+}
+
+.boxes-container { 
+  display: flex; 
+  gap: 15px; 
+  margin: 2rem 0; 
+}
+
+.box { 
+  width: 60px; 
+  height: 60px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-size: 24px; 
+  font-weight: bold; 
+  border-radius: 8px; 
+  color: white; 
+  transition: all 0.3s ease; 
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+}
+
+/* Shared State Colors (Applies to both the main boxes and the legend boxes) */
+.default { background-color: #3b82f6; } /* Blue - Still valid to search */
+.mid { background-color: #ef4444; } /* Red - Currently checking as the pivot */
+.eliminated { background-color: #9ca3af; color: #d1d5db; box-shadow: none; } /* Gray - Ruled out */
+.found { background-color: #10b981; } /* Green - Match found */
+
+/* Specific transforms just for the main animated boxes */
+.box.mid { transform: scale(1.1); z-index: 10; }
+.box.eliminated { opacity: 0.4; transform: scale(0.95); }
+.box.found { transform: translateY(-10px); }
+
+/* Controls & Legend */
+.controls { display: flex; gap: 1rem; }
+button { 
+  padding: 10px 20px; 
+  font-size: 16px; 
+  border: none; 
+  border-radius: 5px; 
+  background-color: #1f2937; 
+  color: white; 
+  cursor: pointer; 
+  transition: 0.2s; 
+}
+button:hover:not(:disabled) { background-color: #374151; }
+button:disabled { background-color: #9ca3af; cursor: not-allowed; }
+
+.legend { 
+  display: flex; 
+  gap: 15px; 
+  margin-bottom: 2rem; 
+  font-size: 14px; 
+}
+.legend-item { display: flex; align-items: center; gap: 5px; }
+.box-mini { width: 15px; height: 15px; border-radius: 3px; }
