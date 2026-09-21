@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./HashTableVisualiser.css";
+import "./HashtableVisualiser.css";
 
 const TABLE_SIZE = 5;
 
