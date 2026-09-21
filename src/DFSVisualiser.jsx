@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import './DfsVisualiser.css';
+import './DFSVisualiser.css';
 
 const INITIAL_NODES = [
   { id: 'A', x: 300, y: 50 }, { id: 'B', x: 150, y: 150 },
