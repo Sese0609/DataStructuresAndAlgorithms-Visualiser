@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './BfsVisualiser.css';
+import './BFSVisualiser.css';
 
 const INITIAL_NODES = [
   { id: 'A', x: 300, y: 50 }, { id: 'B', x: 150, y: 150 },
