@@ -28,24 +28,24 @@
 
 /* Box State Colors */
 .box.default {
-  background-color: #3b82f6; /* Blue - Unsorted portion */
+  background-color: #3b82f6; 
 }
 
 .box.current {
-  background-color: #f59e0b; /* Orange - The item currently being inserted */
-  transform: translateY(-10px) scale(1.05); /* Lifts up slightly to emphasize it */
+  background-color: #f59e0b; 
+  transform: translateY(-10px) scale(1.05); 
   z-index: 10;
 }
 
 .box.comparing {
-  background-color: #ef4444; /* Red - Scanning against this number */
+  background-color: #ef4444; 
 }
 
 .box.sorted {
-  background-color: #10b981; /* Green - The sorted left side of the array */
+  background-color: #10b981; 
 }
 
-/* Controls */
+
 .controls {
   display: flex;
   gap: 1rem;
@@ -71,7 +71,7 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/* Legend styling */
+
 .legend {
   display: flex;
   gap: 15px;
