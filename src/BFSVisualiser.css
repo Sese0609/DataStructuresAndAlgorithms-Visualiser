@@ -17,7 +17,7 @@
 }
 
 .bfs-controls button {
-  background-color: #3b82f6; /* Blue theme for BFS */
+  background-color: #3b82f6; 
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -50,7 +50,7 @@
 }
 
 .bfs-node.queued {
-  fill: #3b82f6; /* Queue is Blue */
+  fill: #3b82f6; 
   stroke: #60a5fa;
 }
 
