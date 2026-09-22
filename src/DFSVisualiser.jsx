@@ -14,14 +14,14 @@ const INITIAL_EDGES = [
   { source: 'C', target: 'F' }, { source: 'C', target: 'G' }
 ];
 
-// Helper to create a consistent edge ID (e.g., 'A-B' is the same as 'B-A')
+
 const getEdgeId = (n1, n2) => [n1, n2].sort().join('-');
 
 export default function DfsVisualiser() {
   const [currentNode, setCurrentNode] = useState(null);
   const [visitedNodes, setVisitedNodes] = useState([]);
   const [stackedNodes, setStackedNodes] = useState([]);
-  const [traversedEdges, setTraversedEdges] = useState([]); // New state for edges
+  const [traversedEdges, setTraversedEdges] = useState([]); 
   const [isRunning, setIsRunning] = useState(false);
   
   const timeoutIds = useRef([]);
@@ -51,7 +51,7 @@ export default function DfsVisualiser() {
     const adj = getAdjacencyList();
     const frames = [];
     
-    // Now storing the node AND its parent to track the path
+    
     const stack = [{ id: startId, parent: null }];
     const visited = new Set();
     const edges = new Set();
@@ -62,7 +62,7 @@ export default function DfsVisualiser() {
       if (!visited.has(current)) {
         visited.add(current);
         
-        // If this node had a parent, we traversed the edge between them
+        
         if (parent) {
           edges.add(getEdgeId(parent, current));
         }
