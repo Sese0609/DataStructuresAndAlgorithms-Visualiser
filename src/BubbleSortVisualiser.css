@@ -8,7 +8,7 @@
 
 .boxes-container {
   display: flex;
-  gap: 15px; /* Space between the 5 boxes */
+  gap: 15px; 
   margin: 30px 0;
   height: 80px; 
   align-items: center;
@@ -20,7 +20,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #3b82f6; /* Default Blue */
+  background-color: #3b82f6; 
   color: white;
   font-size: 24px;
   font-weight: bold;
@@ -29,10 +29,10 @@
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-/* Class applied dynamically in JSX when two boxes are being compared */
+
 .box.active {
-  background-color: #ef4444; /* Changes to Red */
-  transform: translateY(-10px); /* Bumps the active boxes up slightly */
+  background-color: #ef4444; 
+  transform: translateY(-10px); 
 }
 
 .controls {
