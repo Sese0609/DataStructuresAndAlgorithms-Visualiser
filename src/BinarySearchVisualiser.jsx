@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import './BinarySearchVisualiser.css';
 
 const BinarySearch = () => {
-  // Binary search requires a sorted array
+  
   const [array, setArray] = useState([1, 3, 5, 7, 9]);
   const [target, setTarget] = useState(7);
   const [isSearching, setIsSearching] = useState(false);
   
-  // Track pointers to visualize the search space
+  
   const [leftIndex, setLeftIndex] = useState(0);
   const [rightIndex, setRightIndex] = useState(4);
   const [midIndex, setMidIndex] = useState(null);
@@ -18,16 +18,16 @@ const BinarySearch = () => {
   const generateRandomData = () => {
     if (isSearching) return;
     
-    // Generate 5 random numbers and sort them numerically
+    
     const newArr = Array.from({ length: 5 }, () => Math.floor(Math.random() * 20) + 1)
                         .sort((a, b) => a - b);
     setArray(newArr);
     
-    // Pick a random target from the array
+    
     const newTarget = newArr[Math.floor(Math.random() * newArr.length)];
     setTarget(newTarget);
     
-    // Reset state
+    
     setLeftIndex(0);
     setRightIndex(4);
     setMidIndex(null);
@@ -47,10 +47,10 @@ const BinarySearch = () => {
     await delay(600);
 
     while (left <= right) {
-      // Calculate the middle index
+     
       let mid = Math.floor((left + right) / 2);
       setMidIndex(mid);
-      await delay(800); // Pause to show the middle element being checked
+      await delay(800); 
 
       if (array[mid] === target) {
         setFoundIndex(mid);
@@ -70,7 +70,7 @@ const BinarySearch = () => {
       setLeftIndex(left);
       setRightIndex(right);
       setMidIndex(null);
-      await delay(600); // Pause to show the new search bounds
+      await delay(600); 
     }
 
     setIsSearching(false);
@@ -79,7 +79,7 @@ const BinarySearch = () => {
   const getBoxClass = (index) => {
     if (index === foundIndex) return 'box found';
     if (index === midIndex) return 'box mid';
-    // If an element is outside the current left-right boundaries, it is eliminated
+    
     if (index < leftIndex || index > rightIndex) return 'box eliminated';
     return 'box default';
   };
