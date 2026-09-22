@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import './BubbleSortVisualiser.css';
 
 const BubbleSort = () => {
-  // Initialized with exactly 5 numbers
+  
   const [array, setArray] = useState([5, 2, 4, 1, 3]);
   const [isSorting, setIsSorting] = useState(false);
   const [activeIndices, setActiveIndices] = useState([]);
 
-  // Helper function to slow down the loop for animation
+  
   const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
   const generateRandomArray = () => {
@@ -26,7 +26,7 @@ const BubbleSort = () => {
     for (let i = 0; i < arr.length; i++) {
       for (let j = 0; j < arr.length - i - 1; j++) {
         
-        // Highlight the two boxes being compared
+       
         setActiveIndices([j, j + 1]);
         await sleep(500); 
 
@@ -36,14 +36,14 @@ const BubbleSort = () => {
           arr[j] = arr[j + 1];
           arr[j + 1] = temp;
           
-          // Update state to trigger re-render
+          
           setArray([...arr]);
           await sleep(500); 
         }
       }
     }
     
-    // Clear highlights when finished
+    
     setActiveIndices([]);
     setIsSorting(false);
   };
