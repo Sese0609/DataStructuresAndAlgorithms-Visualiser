@@ -17,7 +17,7 @@
 }
 
 .dfs-controls button {
-  background-color: #a855f7; /* Purple theme for DFS */
+  background-color: #a855f7; 
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -46,7 +46,7 @@
 }
 
 .dfs-node.stacked {
-  fill: #a855f7; /* Stack is Purple */
+  fill: #a855f7; 
   stroke: #d8b4fe;
 }
 
