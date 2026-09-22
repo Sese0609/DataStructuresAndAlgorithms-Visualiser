@@ -29,14 +29,14 @@
 }
 
 .btn-insert {
-  background-color: #0ea5e9; /* Light blue */
+  background-color: #0ea5e9; 
 }
 .btn-insert:hover {
   background-color: #0284c7;
 }
 
 .btn-clear {
-  background-color: #64748b; /* Slate gray */
+  background-color: #64748b; 
 }
 .btn-clear:hover {
   background-color: #475569;
